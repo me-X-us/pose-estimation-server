@@ -55,8 +55,8 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code
 of conduct, and the process for submitting pull requests to us.
 
 ## Authors
-  - [Always0ne](https://github.com/Always0ne) - **SangIl Hwang** - <si8363@soongsil.ac.kr>
-
+  - [LeeSeongYeob](https://github.com/LeeSeongYeob) - **SeongYeob Lee** - <ys_lee1017@naver.com>   
+  - [naemoo](https://github.com/naemoo) - 
 See also the list of [contributors](https://github.com/always0ne/readmeTemplate/contributors)
 who participated in this project.
 <!--
@@ -69,7 +69,7 @@ who participated in this project.
 ```
 MIT License
 
-Copyright (c) 2020 always0ne
+Copyright (c) 2020 LeeSeongYeob, naemoo
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
