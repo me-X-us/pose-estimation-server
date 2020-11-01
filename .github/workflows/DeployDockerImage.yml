@@ -15,4 +15,4 @@ jobs:
         tag: |
           latest
           ${{github.sha}}
-        imageName: simple-hrnet
+        imageName: pose-estimation
