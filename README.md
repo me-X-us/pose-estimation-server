@@ -59,7 +59,6 @@ of conduct, and the process for submitting pull requests to us.
   - [naemoo](https://github.com/naemoo) - ****
 See also the list of [contributors](https://github.com/always0ne/readmeTemplate/contributors)
 who participated in this project.
-<!--
+
 ## Used or Referenced Projects
- - [referenced Project](project link) - **LICENSE** - little-bit introduce
--->
+ - [simple-HRNet](https://github.com/stefanopini/simple-HRNet) - **GPL-3.0** - Pose Estimation module
