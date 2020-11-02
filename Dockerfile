@@ -22,3 +22,4 @@ RUN pip3 install -r requirements.txt
 WORKDIR /Pose-estimation/models/detectors/yolo/weights
 RUN chmod 777 download_weights.sh && ./download_weights.sh
 WORKDIR /Pose-estimation
+ENTRYPOINT["FLASK_ENV=development FLASK_APP=./scripts/server.py flask run"]
