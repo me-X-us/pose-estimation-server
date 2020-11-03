@@ -31,7 +31,7 @@ def extract_poses(filename, single_person, Notuse_tiny_yolo):
     rotation_code = check_video_rotation(filename)
     video = cv2.VideoCapture(filename)
     assert video.isOpened()
-    nof_frames = video.get(cv2.CAP_PROP_FRAME_COUNT)
+#    nof_frames = video.get(cv2.CAP_PROP_FRAME_COUNT)
     if Notuse_tiny_yolo:   # default 는 tiny yolo를 사용
         yolo_model_def="./models/detectors/yolo/config/yolov3.cfg"
         yolo_class_path="./models/detectors/yolo/data/coco.names"
@@ -55,7 +55,7 @@ def extract_poses(filename, single_person, Notuse_tiny_yolo):
     )
     index = 0
     while True:
-        t = time.time()
+#        t = time.time()
         ret, frame = video.read()
         if not ret:
             break
@@ -72,8 +72,8 @@ def extract_poses(filename, single_person, Notuse_tiny_yolo):
                     keypoint_byframe["keypoint"].append(makePoint(row[idx], row[idx + 1], keyNum, row[idx + 2]))
                     keyNum += 1
                 dict_frametoJson["Frames"].append(keypoint_byframe)
-        fps = 1. / (time.time() - t)
-        print('\rframe: % 4d / %d - framerate: %f fps ' % (index, nof_frames - 1, fps), end='')
+#        fps = 1. / (time.time() - t)
+#        print('\rframe: % 4d / %d - framerate: %f fps ' % (index, nof_frames - 1, fps), end='')
         index += 1
     return json.dumps(dict_frametoJson)
     # with open("output.json",'w',encoding="utf-8") as fd:
