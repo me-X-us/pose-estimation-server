@@ -17,8 +17,12 @@ RUN pip3 install -r requirements.txt && mkdir weights
 WORKDIR /Pose-estimation/weights 
 RUN curl -c ./cookie -s -L "https://drive.google.com/uc?export=download&id=1zYC7go9EV0XaSlSBjMaiyE_4TcHc_S38" > /dev/null && \
 curl -Lb ./cookie "https://drive.google.com/uc?export=download&confirm=`awk '/download/ {print $NF}' ./cookie`&id=1zYC7go9EV0XaSlSBjMaiyE_4TcHc_S38" -o pose_hrnet_w32_256x192.pth
+
 WORKDIR /Pose-estimation/models/detectors/yolo
 RUN pip3 install -r requirements.txt
 WORKDIR /Pose-estimation/models/detectors/yolo/weights
 RUN chmod 777 download_weights.sh && ./download_weights.sh
+
 WORKDIR /Pose-estimation
+ENTRYPOINT ["python3"]
+CMD ["./scripts/server.py"]
