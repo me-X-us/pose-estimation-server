@@ -26,7 +26,7 @@ def extract_poses(filename, single_person, Notuse_tiny_yolo):
     else:
         device = torch.device('cpu')
     # print(device)
-    dict_frametoJson = {"Frames":[]}
+    dict_frametoJson = {"frames":[]}
     image_resolution = ast.literal_eval(image_resolution)
     rotation_code = check_video_rotation(filename)
     video = cv2.VideoCapture(filename)
@@ -63,15 +63,15 @@ def extract_poses(filename, single_person, Notuse_tiny_yolo):
             frame = cv2.rotate(frame, rotation_code)
         pts = model.predict(frame)
         for j, pt in enumerate(pts):
-            keypoint_byframe = {"Frame": 0, "keypoint": []}
+            keypoint_byframe = {"frameNo": 0, "keyPoints": []}
             keyNum = 0
             row = [index, j] + pt.flatten().tolist()
             if j == 0:  # Person의 경우만
-                keypoint_byframe["Frame"] = index
+                keypoint_byframe["frameNo"] = index
                 for idx in range(2, len(row), 3):
-                    keypoint_byframe["keypoint"].append(makePoint(row[idx], row[idx + 1], keyNum, row[idx + 2]))
+                    keypoint_byframe["keyPoints"].append(makePoint(row[idx], row[idx + 1], keyNum, row[idx + 2]))
                     keyNum += 1
-                dict_frametoJson["Frames"].append(keypoint_byframe)
+                dict_frametoJson["frames"].append(keypoint_byframe)
 #        fps = 1. / (time.time() - t)
 #        print('\rframe: % 4d / %d - framerate: %f fps ' % (index, nof_frames - 1, fps), end='')
         index += 1
