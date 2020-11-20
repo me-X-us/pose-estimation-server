@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM nvidia/cuda:11.0-base-ubuntu20.04
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
 git \
 python3-pip \
