@@ -26,10 +26,6 @@ def makePoint(y, x, keyNum, score):
     """
     docstring
     """
-    points = {"position": {"y": 0, "x": 0}, "part": "", "score": 0}
+    points = {"y": y, "x": x, "part": keypoints[keyNum], "score": score}
 
-    points["position"]["y"] = y
-    points["position"]["x"] = x
-    points["part"] = keypoints[keyNum]
-    points["score"] = score
     return points
